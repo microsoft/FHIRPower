@@ -9,7 +9,7 @@
 **Enhance physician efficiency**. The PowerApps application with FHIR for doctors is an indispensable tool when it comes to orchestrating massive patient datasets, optimizing communication, and making their job less stressful with minimum paperwork. It helps get more reliable results and insights faster that might be needed for further patient treatment.
 
 ## Architecture
-<center><img src="images//fhirpower-architecture.png"></center>
+<center><img src="images//fhirpower-architecture.png" width="500"></center>
 
 ## Overview
 
@@ -24,30 +24,34 @@ The two Connectors that works with Azure API for FHIR contain a subset of FHIR R
 **[FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/)** and **[FHIRClinical](
 https://docs.microsoft.com/en-us/connectors/fhirclinical/)** are certified custom connectors that allows for building secure healthcare applications to enable interoperability using FHIR.
 
-Details on [FHIRBase Actions](https://docs.microsoft.com/en-us/connectors/fhirbase/#actions) and [FHIRClinical Actions](https://docs.microsoft.com/en-us/connectors/fhirclinical/#actions) for API calls.
-
-Mapping [FHIR Base and Clinical Resources](https://www.hl7.org/fhir/resourcelist.html) to FHIRBase and FHIRClinical connectors.
-
 ## Prerequisites
 
 ### Azure API for FHIR
 - Deploy Azure API for FHIR with First Party Auth by [deploying via the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-paas-portal-quickstart). 
 - To access the Azure API for FHIR, apply RBAC by adding users to FHIR Data Reader or FHIR Data Contributor role using Access Control (IAM). The users with access with authenticate through the Connector, the connector assumes their role.
 - Load sample data into Azure API for FHIR. Detailed instructions to load synthetic data can be found in [OpenHack-FHIR Github](https://github.com/microsoft/OpenHack-FHIR/tree/main/Challenge01-AzureAPIforFHIR#task-2-generate--load-synthetic-data)
+- More details on using [Azure API for FHIR](https://github.com/microsoft/OpenHack-FHIR)
 
 ### Power Platform
-Custom Connectors `FHIRBase` and `FHIRClinical` needs to be added to your PowerPlatform environment by your Admin.
+- [Power Platform](https://docs.microsoft.com/en-us/power-platform/) environment and access to create Power Apps.
+- Custom Connectors [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](
+https://docs.microsoft.com/en-us/connectors/fhirclinical/) needs to be added to your PowerPlatform environment by your Admin.
+- Details on [FHIRBase Actions](https://docs.microsoft.com/en-us/connectors/fhirbase/#actions) and [FHIRClinical Actions](https://docs.microsoft.com/en-us/connectors/fhirclinical/#actions) for API calls.
+- Mapping [FHIR Base and Clinical Resources](https://www.hl7.org/fhir/resourcelist.html) to FHIRBase and FHIRClinical connectors.
+- More details on [Power Apps](https://docs.microsoft.com/en-us/powerapps/)
 
 ## Get Started
 
 ### Import sample PowerApps package
-- Download the sample packages.
+- Download the sample [packages](./packages).
 - Open your [Power Apps Portal](https://make.preview.powerapps.com/).
 - Click `Apps` on the left ribbon.
 - Click `Import canvas app`.
 - Click `Upload` and choose the sample .zip file you downloaded.
 - Click `Update` in `IMPORT SETUP` and select `Create as new`, enter `Resource name` and click Save.
 - Click `Import`.
+
+### Edit or Run imported Apps
 - You will get a message `All package resources were successfully imported`.
 - Click `Apps` on the left ribbon to see the App you imported. **NOTE** there might be a few minutes delay.
 - Select the imported App, and choose `Edit` to look at the code or make changes or `Play` to run the App.
