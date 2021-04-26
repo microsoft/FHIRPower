@@ -4,12 +4,12 @@
 
 ## Scenario
 
-**Improve patient experience**. The PowerApps application with FHIR for patients ensures all their medical data is secure, while enabling patients to access to their health data using user-friendly interface. 
-
 **Enhance physician efficiency**. The PowerApps application with FHIR for doctors is an indispensable tool when it comes to orchestrating massive patient datasets, optimizing communication, and making their job less stressful with minimum paperwork. It helps get more reliable results and insights faster that might be needed for further patient treatment.
 
+**Improve patient experience**. The PowerApps application with FHIR for patients ensures all their medical data is secure, while enabling patients to access to their health data using user-friendly interface. 
+
 ## Architecture
-<center><img src="images//fhirpower-architecture.png" width="500"></center>
+<center><img src="images//fhirpower-architecture.png" width="650"></center>
 
 ## Overview
 
@@ -41,10 +41,10 @@ https://docs.microsoft.com/en-us/connectors/fhirclinical/) needs to be added to 
 - More details on [Power Apps](https://docs.microsoft.com/en-us/powerapps/)
 
 ## Getting Started
-This repository provides a starter kit by reading few fields from these FHIR resources - Patient, Practitioner, Observation, Encounter, Appointment, Medication Request and Diagnostic Report (Lab Results).
+This repository provides a starter kit by reading few fields from these **FHIR resources - Patient, Practitioner, Observation, Encounter, Appointment, Medication Request and Diagnostic Report (Lab Results)**.
 It provdies the possibility to extend the App to include more fields and resources, write and update to Azure API for FHIR.
 
-Steps to import sample Power App packages and run them in your Power Platform and Azure API for FHIR environments:
+Let's get started on the steps to import sample Power App packages and run them in your Power Platform and Azure API for FHIR environments:
 
 ### Import sample PowerApps package
 - Download the sample [packages](./packages).
