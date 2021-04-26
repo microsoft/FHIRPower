@@ -28,19 +28,23 @@ https://docs.microsoft.com/en-us/connectors/fhirclinical/)** are certified custo
 
 ### Azure API for FHIR
 - Deploy Azure API for FHIR with First Party Auth by [deploying via the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir-paas-portal-quickstart). 
-- To access the Azure API for FHIR, apply RBAC by adding users to FHIR Data Reader or FHIR Data Contributor role using Access Control (IAM). The users with access with authenticate through the Connector, the connector assumes their role.
+- To access the Azure API for FHIR, apply RBAC by adding users to `FHIR Data Reader` or `FHIR Data Contributor` role using Access Control (IAM). The users with access will authenticate through the Connector which assumes their role.
 - Load sample data into Azure API for FHIR. Detailed instructions to load synthetic data can be found in [OpenHack-FHIR Github](https://github.com/microsoft/OpenHack-FHIR/tree/main/Challenge01-AzureAPIforFHIR#task-2-generate--load-synthetic-data)
 - More details on using [Azure API for FHIR](https://github.com/microsoft/OpenHack-FHIR)
 
 ### Power Platform
-- [Power Platform](https://docs.microsoft.com/en-us/power-platform/) environment and access to create Power Apps.
+- Get access to [Power Platform](https://docs.microsoft.com/en-us/power-platform/) environment to create Power Apps.
 - Custom Connectors [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](
 https://docs.microsoft.com/en-us/connectors/fhirclinical/) needs to be added to your PowerPlatform environment by your Admin.
 - Details on [FHIRBase Actions](https://docs.microsoft.com/en-us/connectors/fhirbase/#actions) and [FHIRClinical Actions](https://docs.microsoft.com/en-us/connectors/fhirclinical/#actions) for API calls.
 - Mapping [FHIR Base and Clinical Resources](https://www.hl7.org/fhir/resourcelist.html) to FHIRBase and FHIRClinical connectors.
 - More details on [Power Apps](https://docs.microsoft.com/en-us/powerapps/)
 
-## Get Started
+## Getting Started
+This repository provides a starter kit by reading few fields from these FHIR resources - Patient, Practitioner, Observation, Encounter, Appointment, Medication Request and Diagnostic Report (Lab Results).
+It provdies the possibility to extend the App to include more fields and resources, write and update to Azure API for FHIR.
+
+Steps to import sample Power App packages and run them in your Power Platform and Azure API for FHIR environments:
 
 ### Import sample PowerApps package
 - Download the sample [packages](./packages).
@@ -56,7 +60,7 @@ https://docs.microsoft.com/en-us/connectors/fhirclinical/) needs to be added to 
 - Click `Apps` on the left ribbon to see the App you imported. **NOTE** there might be a few minutes delay.
 - Select the imported App, and choose `Edit` to look at the code or make changes or `Play` to run the App.
 - If you already have FHIRBase and FHIRClinical connectors added in `Prerequisites` above, you will get a popup - your App asking your permission to use the connectors, click `Allow`.
-- Enter the `URL of FHIR Server` created in `Prerequistes` above. You can find it the `Azure API for FHIR service`, in `FHIR metadata endpoint' with the metadata suffix. Ex: `https://<AzureAPIforFHIRName>.azurehealthcareapis.com`
+- Enter the `URL of FHIR Server` created in `Prerequistes` above. You can find it the `Azure API for FHIR service`, in `FHIR metadata endpoint' with the metadata suffix. Ex: `https://AzureAPIforFHIRName.azurehealthcareapis.com`
 
 ## Contributing
 
