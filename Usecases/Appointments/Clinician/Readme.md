@@ -34,35 +34,25 @@ After retrieving the data the same button action ('_onSelect_') will navigate th
 
 > Navigate(scrAppointments);
 
-<center><img src="images/home.PNG" width="550"></center>
+<center><img src="images/home.PNG" width="700"></center>
 
 ## Appointment Screen
 The gallery shows data from collection colAppointments.
 
-<center><img src="images/appointmentMainpage.PNG" width="550"></center>
+<center><img src="images/appointmentMainpage.PNG" width="700"></center>
 
 The Clinician can respond to the appointment request by clicking on one of the three icons (_Accept, Decline, Tentative_).
 
 ### Accept/Decline/Tentative
 Once the clinician clicks on one of the three choices, the button click will call FHIRConnectorName_**PUTAppointmentID**_ that updates Practitioner and Appointments status in FHIR Server. 
-
-<center><img src="images/booked.png" width="550"></center>
- 
-We do this by calling an update function on the connector
-
 > FHIRBase.PUTAppointmentID()
 
-<center><img src="images/apptPut.PNG" width="550"></center>
+<center><img src="images/apptPut.PNG" width="700"></center>
 
-If you check the last line, there is a variable called '_nestedCollectionToPatch_'.  
+<center><img src="images/booked.png" width="700"></center>
+ 
+**NOTE:** FHIR Server as of when this is written doesn't support PATCH, so '_**Patch()**_ function to update nested Participant object which is then passed to _**PUTAppointmentID**_ to update the statuses.
 
-<center><img src="images/nestedCol.PNG" width="550"></center>
-
-We are using a '_**Patch()**_ function to retrieve nested Participant in our Appointment object. This will allow us to update the status of the Practitioner.
-
-Once we update the status we put that collection in our PUT object as such: 
-
-> participant: nestedCollectionToPatch
-
+<center><img src="images/nestedCol.PNG" width="700"></center>
 
 
