@@ -29,19 +29,21 @@ Once the clinician clicks on one of the three choices the app will make a call t
 
 ![statusUpdate](images/booked.png)
  
-This is the put object we pass to the FHIR connector.
+We do this by calling an update function on the connector
+
+> FHIRBase.PUTAppointmentID()
+
 ![update](images/apptPut.PNG)
 
 If you check the last line, there is a variable called '_nestedCollectionToPatch_'.  
+
 ![nestedcollection](images/nestedCol.PNG)
 
-As you can see from above we are using '_**Patch()**_ to retrieve nested Participant collection. This will allow us to update the status of the Practitioner.
+We are using a '_**Patch()**_ function to retrieve nested Participant in our Appointment object. This will allow us to update the status of the Practitioner.
 
-Once we extract the Practioner and update the status we put that object in the last line of the put statement 
+Once we update the status we put that collection in our PUT object as such: 
 
 > participant: nestedCollectionToPatch
-
-
 
 
 
