@@ -1,3 +1,12 @@
 # Usecase for Clinician
 
-![mainpage](images/appointmentMainpage.PNG)
+## Home 
+![home](images/home.PNG)
+
+## Appointment Screen
+![appointment](images/appointmentMainpage.PNG)
+
+## Accept/Decline/Tentative
+![statusUpdate](images/booked.PNG)
+
+
