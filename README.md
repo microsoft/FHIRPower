@@ -62,6 +62,10 @@ Let's get started on the steps to import sample Power App packages and run them 
 - If you already have FHIRBase and FHIRClinical connectors added in `Prerequisites` above, you will get a popup - your App asking your permission to use the connectors, click `Allow`.
 - Enter the `URL of FHIR Server` created in `Prerequistes` above. You can find the `Azure API for FHIR service`, in `FHIR metadata endpoint` with the metadata suffix. Ex: `https://AzureAPIforFHIRName.azurehealthcareapis.com`
 
+## Healthcare Use Cases
+- [Appointments](./Usecases/Appointments)
+- [Practitioner Portal](./Usecases/Practioner-Portal)
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
