@@ -22,7 +22,28 @@ As you see below, the above function calls allow us to retrieve all the informat
 
 ![appointment](images/appointmentMainpage.PNG)
 
+Clinician now is now going to response by clicking on one of the three icons (_Accept, Decline, Tentative_)
+
 ## Accept/Decline/Tentative
+Once the clinician clicks on one of the three choices the app will make a call to our FHIR connector to update the status of the appointment.
+
+> FHIRBase.PUTAppointmentID(lblApptPracIDHid.Text, 
+{
+    resourceType: "Appointment",
+    id_1: lblApptPracIDHid.Text,
+    status: "booked",
+    serviceCategory: ThisItem.resource.serviceCategory,
+    serviceType: ThisItem.resource.serviceType,
+    specialty: ThisItem.resource.specialty,
+    appointmentType: ThisItem.resource.appointmentType,
+    priority: ThisItem.resource.priority,
+    description: ThisItem.resource.description,
+    start: ThisItem.resource.start,
+    end: ThisItem.resource.end,
+    created: ThisItem.resource.created,    
+    participant: nestedCollectionToPatch
+});
+
 ![statusUpdate](images/booked.png)
 
 
