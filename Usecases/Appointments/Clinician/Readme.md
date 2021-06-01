@@ -1,20 +1,22 @@
 # Usecase for Clinician
 
 ## Home 
-![home](images/home.PNG)
+When you load the clinician app you will be presented with the main page. For this use case, a clinician will click on '**Book Appointment**' 
 
-
-## Appointment Screen
-
-We utilize the Fhir connector mentioned in [README](../) to connect to the FHIR database. This connection will allow us to retrieve our Appointment, Patient, and Practioner object.  
-
-We do this by using ClearConnect(). This clears whatever is in the variable (*colAppointments, colPatients, colPractitioners*)  and load fresh collections from the datasource
+This button click will call _**ClearCollect()**_ function. This function clears whatever is in the variable (*colAppointments, colPatients, colPractitioners*)  and load fresh collections from the datasource
 
 > ClearCollect(colAppointments, FHIRBase.GETAppointment().entry.resource);
 > ClearCollect(colPatients, FHIRBase.GETPatient().entry.resource);
 > ClearCollect(colPractioners, FHIRBase.GETPractitioner().entry.resource);
 
-As you see below, the function calls allow us to retrieve all the information shown below.
+After retrieving the data the same button action ('_onSelect_') will navigate the app to screen called _scrAppointments_
+
+> Navigate(scrAppointments);
+
+![home](images/home.PNG)
+
+## Appointment Screen
+As you see below, the above function calls allow us to retrieve all the information shown below.
 
 ![appointment](images/appointmentMainpage.PNG)
 
