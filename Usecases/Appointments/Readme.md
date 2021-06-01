@@ -1,6 +1,11 @@
 # Appointments 
 Appointment is a booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. 
 
+## [FHIR Resources](http://hl7.org/fhir/)
+- [Appointment](https://www.hl7.org/fhir/appointment.html) resources are used to provide information about a planned meeting.
+- [Schedule](https://www.hl7.org/fhir/schedule.html) is a container for slots of time that may be available for booking appointments.
+- [Slot](https://www.hl7.org/fhir/slot.html) is a slot of time on a schedule that may be available for booking appointments.
+
 ## Basic workflow for Appointment
 ### Discovery/Addressing
 Before an appointment can be made, details of the resource that we want to schedule an appointment with must be determined. This is typically handled via the Schedule resource.
@@ -21,8 +26,7 @@ The patient/clinician of the appointment checks for the overall status of the ap
 This step permits creating a waitlisted appointment. This could occur if an appointment needs to be booked into a time that is not ideal for the patient due to lack of available time slots. 
 More Details can be found [here](https://www.hl7.org/fhir/appointment.html#basic-workflow)
 
-## [FHIR Resources](http://hl7.org/fhir/)
-- [Appointment](https://www.hl7.org/fhir/appointment.html) resources are used to provide information about a planned meeting.
-- [Schedule](https://www.hl7.org/fhir/schedule.html) is a container for slots of time that may be available for booking appointments.
-- [Slot](https://www.hl7.org/fhir/slot.html) is a slot of time on a schedule that may be available for booking appointments.
+## Appointment Apps
+- [Patient](./Patient/Readme.md)
+- [Clinician](./Clinician/Readme.md)
 
