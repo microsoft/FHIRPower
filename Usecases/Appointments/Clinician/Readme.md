@@ -1,3 +1,3 @@
 # Usecase for Clinician
 
-![mainpage](images/appointmentMainpage.png)
+![mainpage](images/appointmentMainpage.PNG)
