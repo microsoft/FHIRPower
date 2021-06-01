@@ -25,25 +25,23 @@ As you see below, the above function calls allow us to retrieve all the informat
 Clinician now is now going to response by clicking on one of the three icons (_Accept, Decline, Tentative_)
 
 ## Accept/Decline/Tentative
-Once the clinician clicks on one of the three choices the app will make a call to our FHIR connector to update the status of the appointment.
-
-> FHIRBase.PUTAppointmentID(lblApptPracIDHid.Text, 
-{
-    resourceType: "Appointment",
-    id_1: lblApptPracIDHid.Text,
-    status: "booked",
-    serviceCategory: ThisItem.resource.serviceCategory,
-    serviceType: ThisItem.resource.serviceType,
-    specialty: ThisItem.resource.specialty,
-    appointmentType: ThisItem.resource.appointmentType,
-    priority: ThisItem.resource.priority,
-    description: ThisItem.resource.description,
-    start: ThisItem.resource.start,
-    end: ThisItem.resource.end,
-    created: ThisItem.resource.created,    
-    participant: nestedCollectionToPatch
-});
+Once the clinician clicks on one of the three choices the app will make a call to our FHIR connector to update the status of the appointment. The app view will be updated with the new status.
 
 ![statusUpdate](images/booked.png)
+ 
+This is the put object we pass to the FHIR connector.
+![update](images/apptPut.PNG)
+
+If you check the last line, there is a variable called '_nestedCollectionToPatch_'.  
+![nestedcollection](images/nestedCol.PNG)
+
+As you can see from above we are using '_**Patch()**_ to retrieve nested Participant collection. This will allow us to update the status of the Practitioner.
+
+Once we extract the Practioner and update the status we put that object in the last line of the put statement 
+
+> participant: nestedCollectionToPatch
+
+
+
 
 
