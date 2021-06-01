@@ -7,6 +7,6 @@
 ![appointment](images/appointmentMainpage.PNG)
 
 ## Accept/Decline/Tentative
-![statusUpdate](images/booked.PNG)
+![statusUpdate](images/booked.png)
 
 
