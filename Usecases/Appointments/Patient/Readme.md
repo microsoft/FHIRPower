@@ -23,6 +23,7 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 When you run the Patient app you will be presented with the main page. 
 > ClearCollect(colPatients,'FHIRPower-Appointment'.GetPatients().entry.resource);
 Click on 'Schedule an Appointment'
+![Home](../Patient/images/Patient_Portal_Home_screen.png)
 
 ## Request Appointment Screen
 ## Appointment Info Screen
