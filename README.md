@@ -47,15 +47,11 @@ https://docs.microsoft.com/en-us/connectors/fhirclinical/) need to be added to y
 - Instructions to create your custom connector, can be found [here](./CUSTOM_CONNECTOR.md) 
 - Sample custom connector can be found [here](./SampleFHIRCustomConnector)
 
-## Getting Started
-This repository provides a starter kit by reading a few fields from these **FHIR resources - Patient, Practitioner, Observation, Encounter, Appointment, Medication Request and Diagnostic Report (Lab Results)**.
-It provides the ability to extend the App to include more fields and resources, write and update to Azure API for FHIR.
+## PowerApps - Healthcare Use Cases
+This repository provides starter kit PowerApp pacakges with the ability to extend the App.
 
-Let's get started on the steps to import sample Power App packages and run them in your Power Platform, and Azure API for FHIR environments.
-
-## Healthcare Use Cases
-- [Appointments](./Usecases/Appointments)
-- [Practitioner Portal](./Usecases/Practioner-Portal)
+- **[Appointments](./Usecases/Appointments)**
+- **[Practitioner Portal](./Usecases/Practioner)**
 
 ## Contributing
 
