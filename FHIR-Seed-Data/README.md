@@ -17,8 +17,8 @@
 3. Register the application with Azure AD tenant where the Azure FHIR API Service is provisioned
 4. Add the following values to Azure KeyVault provisioned in the same subscription as Azure FHIR API Service
 5. Add the following to Azure KeyVault
-         1. Application client ID
-         2. Application secret
-         3. Azure FHIR API URL
+   1. Application client ID
+   2. Application secret
+   3. Azure FHIR API URL
 6. Deploy the DotNet project Azure App Service.
 
