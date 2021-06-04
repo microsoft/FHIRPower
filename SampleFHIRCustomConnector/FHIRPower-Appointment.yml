@@ -1,0 +1,1149 @@
+swagger: '2.0'
+info: {title: FHIRPower-Appointment, description: 'FHIRPower API for Appointment,
+    Schedule & Slot', version: '1.0'}
+host: hlsfhirpower.azurehealthcareapis.com
+basePath: /
+schemes: [https]
+consumes: []
+produces: []
+paths:
+  /Appointment:
+    get:
+      parameters:
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: patient, in: query, required: false, type: string, description: clinical-patient,
+        x-ms-summary: search, format: ''}
+      - {name: _count, in: query, required: false, type: string, description: choose
+          to return the results in a series of pages, x-ms-summary: count}
+      - {name: _sort, in: query, required: false, type: string, description: order
+          to return the results by using the parameter, x-ms-summary: sort}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              entry:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fullUrl: {type: string, description: fullUrl}
+                    resource: {$ref: '#/definitions/appointment'}
+                description: entry
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Get Appointments
+      description: A booking of a healthcare event among patient(s), practitioner(s),
+        related person(s) and/or device(s) for a specific date/time. This may result
+        in one or more Encounter(s).
+      operationId: GetAppointments
+    post:
+      parameters:
+      - {$ref: '#/parameters/appointment'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/appointment'}
+      summary: Create Appointment
+      description: A booking of a healthcare event among patient(s), practitioner(s),
+        related person(s) and/or device(s) for a specific date/time. This may result
+        in one or more Encounter(s).
+      operationId: CreateAppointment
+  /Appointment/{id}:
+    get:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource, x-ms-summary: id}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/appointment'}
+      summary: Get Appointment By ID
+      description: A booking of a healthcare event among patient(s), practitioner(s),
+        related person(s) and/or device(s) for a specific date/time. This may result
+        in one or more Encounter(s).
+      operationId: GetAppointmentByID
+    delete:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource, x-ms-summary: id}
+      responses:
+        '200':
+          description: Success
+          schema: {type: string}
+      summary: Delete Appointment By ID
+      description: A booking of a healthcare event among patient(s), practitioner(s),
+        related person(s) and/or device(s) for a specific date/time. This may result
+        in one or more Encounter(s).
+      operationId: DeleteAppointmentByID
+    put:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource}
+      - {$ref: '#/parameters/appointment'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/appointment'}
+      summary: Update Appointment by ID
+      description: A booking of a healthcare event among patient(s), practitioner(s),
+        related person(s) and/or device(s) for a specific date/time. This may result
+        in one or more Encounter(s).
+      operationId: UpdateAppointmentByID
+  /AppointmentResponse:
+    get:
+      parameters:
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: _count, in: query, required: false, type: string, description: results
+          returned in a series of pages, x-ms-summary: count}
+      - {name: _sort, in: query, required: false, type: string, description: order
+          to return the results by using the parameter, x-ms-summary: sort}
+      - {name: patient, in: query, required: false, type: string, description: clinical-patient,
+        x-ms-summary: search, format: ''}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string, description: resourceType}
+              id: {type: string, description: id}
+              meta:
+                type: object
+                properties:
+                  lastUpdated: {type: string, description: lastUpdated}
+                description: meta
+              type: {type: string, description: type}
+              link:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    relation: {type: string, description: relation}
+                    url: {type: string, description: url}
+                description: link
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Get Appointment Response
+      description: A reply to an appointment request for a patient and/or practitioner(s),
+        such as a confirmation or rejection.
+      operationId: GetAppointmentResponse
+    post:
+      parameters:
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            resourceType: {type: string, description: resourceType}
+            id: {type: string, description: id}
+            text:
+              type: object
+              properties:
+                status: {type: string, description: status}
+                div: {type: string, description: div}
+              description: text
+            appointment:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: appointment
+            actor:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: actor
+            participantStatus: {type: string, description: participantStatus}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string, description: resourceType}
+              id: {type: string, description: id}
+              meta:
+                type: object
+                properties:
+                  versionId: {type: string, description: versionId}
+                  lastUpdated: {type: string, description: lastUpdated}
+                description: meta
+              text:
+                type: object
+                properties:
+                  status: {type: string, description: status}
+                  div: {type: string, description: div}
+                description: text
+              appointment:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: appointment
+              actor:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: actor
+              participantStatus: {type: string, description: participantStatus}
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Create Appointment Response
+      description: A reply to an appointment request for a patient and/or practitioner(s),
+        such as a confirmation or rejection.
+      operationId: CreateAppointmentResponse
+  /AppointmentResponse/{id}:
+    get:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource, x-ms-summary: id}
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string, description: resourceType}
+              id: {type: string, description: id}
+              meta:
+                type: object
+                properties:
+                  versionId: {type: string, description: versionId}
+                  lastUpdated: {type: string, description: lastUpdated}
+                description: meta
+              text:
+                type: object
+                properties:
+                  status: {type: string, description: status}
+                  div: {type: string, description: div}
+                description: text
+              appointment:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: appointment
+              actor:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: actor
+              participantStatus: {type: string, description: participantStatus}
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Get Appointment Response By ID
+      description: A reply to an appointment request for a patient and/or practitioner(s),
+        such as a confirmation or rejection.
+      operationId: GetAppointmentResponseByID
+    delete:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource, x-ms-summary: id}
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            resourceType: {type: string, description: resourceType}
+            id: {type: string, description: id}
+            meta:
+              type: object
+              properties:
+                versionId: {type: string, description: versionId}
+                lastUpdated: {type: string, description: lastUpdated}
+              description: meta
+            text:
+              type: object
+              properties:
+                status: {type: string, description: status}
+                div: {type: string, description: div}
+              description: text
+            appointment:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: appointment
+            actor:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: actor
+            participantStatus: {type: string, description: participantStatus}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string, description: resourceType}
+              id: {type: string, description: id}
+              meta:
+                type: object
+                properties:
+                  versionId: {type: string, description: versionId}
+                  lastUpdated: {type: string, description: lastUpdated}
+                description: meta
+              text:
+                type: object
+                properties:
+                  status: {type: string, description: status}
+                  div: {type: string, description: div}
+                description: text
+              appointment:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: appointment
+              actor:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: actor
+              participantStatus: {type: string, description: participantStatus}
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Delete AppointmentResponse By ID
+      description: A reply to an appointment request for a patient and/or practitioner(s),
+        such as a confirmation or rejection.
+      operationId: DeleteAppointmentResponseByID
+    put:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource, x-ms-summary: id}
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            resourceType: {type: string, description: resourceType}
+            id: {type: string, description: id}
+            meta:
+              type: object
+              properties:
+                versionId: {type: string, description: versionId}
+                lastUpdated: {type: string, description: lastUpdated}
+              description: meta
+            text:
+              type: object
+              properties:
+                status: {type: string, description: status}
+                div: {type: string, description: div}
+              description: text
+            appointment:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: appointment
+            actor:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: actor
+            participantStatus: {type: string, description: participantStatus}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string, description: resourceType}
+              id: {type: string, description: id}
+              meta:
+                type: object
+                properties:
+                  versionId: {type: string, description: versionId}
+                  lastUpdated: {type: string, description: lastUpdated}
+                description: meta
+              text:
+                type: object
+                properties:
+                  status: {type: string, description: status}
+                  div: {type: string, description: div}
+                description: text
+              appointment:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: appointment
+              actor:
+                type: object
+                properties:
+                  reference: {type: string, description: reference}
+                  display: {type: string, description: display}
+                description: actor
+              participantStatus: {type: string, description: participantStatus}
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Update AppointmentResponse By ID
+      description: A reply to an appointment request for a patient and/or practitioner(s),
+        such as a confirmation or rejection.
+      operationId: UpdateAppointmentResponseByID
+  /Patient:
+    get:
+      parameters:
+      - {name: address-use, type: string, in: query}
+      - {name: family, type: string, in: query}
+      - {name: phone, type: string, in: query}
+      - {name: deceased, type: string, in: query}
+      - {name: telecom, type: string, in: query}
+      - {name: phonetic, type: string, in: query}
+      - {name: name, type: string, in: query}
+      - {name: general-practitioner, type: string, in: query}
+      - {name: gender, type: string, in: query}
+      - {name: organization, type: string, in: query, description: The organization
+          that is the custodian of the patient record}
+      - {name: address-state, type: string, in: query}
+      - {name: language, type: string, in: query, description: Language code (irrespective
+          of use value)}
+      - {name: active, type: string, in: query, description: Whether the patient record
+          is active}
+      - {name: email, type: string, in: query}
+      - {name: address, type: string, in: query}
+      - {name: identifier, type: string, in: query, description: A patient identifier}
+      - {name: address-postalcode, type: string, in: query}
+      - {name: address-country, type: string, in: query}
+      - {name: link, type: string, in: query, description: All patients linked to
+          the given patient}
+      - {name: death-date, type: string, in: query, format: date}
+      - {name: address-city, type: string, in: query}
+      - {name: given, type: string, in: query}
+      - {name: birthdate, type: string, in: query, format: date}
+      - {name: _source, type: string, in: query, description: Identifies where the
+          resource comes from}
+      - {name: _lastUpdated, type: string, in: query, format: date}
+      - {name: _count, in: query, required: false, type: string, description: results
+          returned in a series of pages, x-ms-summary: count}
+      - {name: _sort, in: query, required: false, type: string, description: order
+          to return the results by using the parameter, x-ms-summary: sort}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              entry:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fullUrl: {type: string, description: fullUrl}
+                    resource: {$ref: '#/definitions/patient'}
+                description: entry
+          headers:
+            Content-Type: {description: Content-Type, type: string}
+            Accept: {description: Accept, type: string}
+      summary: Get Patients
+      description: Demographics and other administrative information about an individual
+        or animal receiving care or other health-related services.
+      operationId: GetPatients
+    post:
+      parameters:
+      - {$ref: '#/parameters/patient'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/patient'}
+      summary: Create Patient
+      description: Demographics and other administrative information about an individual
+        or animal receiving care or other health-related services.
+      operationId: CreatePatient
+  /Patient/{id}:
+    get:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/patient'}
+      summary: Get Patient By ID
+      description: Demographics and other administrative information about an individual
+        or animal receiving care or other health-related services.
+      operationId: GetPatientByID
+    delete:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource}
+      responses:
+        '200':
+          description: Success
+          schema: {type: string}
+        '404': {description: The specified Patient ID was not found}
+      summary: Delete Patient By ID
+      description: Demographics and other administrative information about an individual
+        or animal receiving care or other health-related services.
+      operationId: DeletePatientByID
+    put:
+      parameters:
+      - {name: id, in: path, required: true, type: string, description: logical id
+          of the resource}
+      - {$ref: '#/parameters/patient'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/patient'}
+      summary: Update Patient By ID
+      description: Demographics and other administrative information about an individual
+        or animal receiving care or other health-related services.
+      operationId: UpdatePatientByID
+  /Practitioner:
+    get:
+      parameters:
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: _count, in: query, required: false, type: string, description: results
+          returned in a series of pages, x-ms-summary: count}
+      - {name: _sort, in: query, required: false, type: string, description: order
+          to return the results by using the parameter, x-ms-summary: sort}
+      - {name: patient, in: query, required: false, type: string, description: clinical-patient,
+        x-ms-summary: search}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string}
+              id: {type: string}
+              meta:
+                type: object
+                properties:
+                  lastUpdated: {type: string}
+              type: {type: string}
+              link:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    relation: {type: string}
+                    url: {type: string}
+              entry:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fullUrl: {type: string}
+                    resource: {$ref: '#/definitions/practitioner'}
+                    search:
+                      type: object
+                      properties:
+                        mode: {type: string}
+          headers:
+            Content-Type: {type: string}
+            Accept: {type: string}
+      summary: Get Practitioner
+      description: A person who is directly or indirectly involved in the provisioning
+        of healthcare.
+      operationId: GetPractitioner
+    post:
+      parameters:
+      - {name: Content-Type, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {name: Accept, in: header, required: false, type: string, x-ms-visibility: internal}
+      - {$ref: '#/parameters/practitioner'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/practitioner'}
+          headers:
+            Content-Type: {type: string}
+            Accept: {type: string}
+      summary: Create Practitioner
+      description: A person who is directly or indirectly involved in the provisioning
+        of healthcare.
+      operationId: CreatePractitioner
+  /Practitioner/{id}:
+    get:
+      parameters:
+      - {name: id, in: path, required: true, type: string}
+      - {name: Content-Type, in: header, required: false, type: string}
+      - {name: Accept, in: header, required: false, type: string}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/practitioner'}
+          headers:
+            Content-Type: {type: string}
+            Accept: {type: string}
+      summary: Get Practitioner by Id
+      description: A person who is directly or indirectly involved in the provisioning
+        of healthcare
+      operationId: GetPractitionerById
+    delete:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      responses:
+        '204':
+          description: Success
+          schema: {type: string}
+        '404': {description: The specified Practitioner ID was not found}
+      summary: Delete Practitioner
+      description: Delete Practitioner
+      operationId: DeletePractitioner
+  /Schedule:
+    get:
+      parameters:
+      - {in: query, required: false, name: active, type: string}
+      - {in: query, required: false, name: identifier, type: string}
+      - {in: query, required: false, description: 'The individual(HealthcareService,
+          Practitioner, Location, ...) to find a Schedule for', name: actor, type: string}
+      - {in: query, required: false, name: date, type: string, description: Search
+          for Schedule resources that have a period that contains this date specified}
+      - {in: query, required: false, name: dateTime, type: string}
+      - {in: query, required: false, name: service-category, type: string}
+      - {in: query, required: false, name: service-type, type: string}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              entry:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fullUrl: {type: string}
+                    resource: {$ref: '#/definitions/schedule'}
+                description: entry
+      summary: Get Schedules
+      description: Get Schedules
+      operationId: GetSchedules
+    post:
+      parameters:
+      - {$ref: '#/parameters/schedule'}
+      - {name: Content-Type, type: string, in: header, required: false}
+      - {name: Accept, type: string, in: header, required: false}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/schedule'}
+      summary: Create a Schedule
+      description: Create a new Schedule
+      operationId: CreateSchedule
+  /Schedule/{id}:
+    get:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/schedule'}
+        '404':
+          description: The specified Schedule ID was not found.
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string}
+              id: {type: string}
+              issue:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    severity: {type: string}
+                    code: {type: string}
+                    diagnostics: {type: string}
+        '410':
+          description: The identified Schedule has been removed.
+          schema:
+            type: object
+            properties:
+              resourceType: {type: string}
+              id: {type: string}
+      summary: Get Schedule by ID
+      description: Get Schedule by ID
+      operationId: GetScheduleById
+    delete:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      responses:
+        '204':
+          description: Success
+          schema: {type: string}
+        '404': {description: The specified Schedule ID was not found}
+      summary: Delete Schedule
+      description: Delete Schedule
+      operationId: DeleteSchedule
+    put:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      - {$ref: '#/parameters/schedule'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/schedule'}
+        '404': {description: The specified Schedule ID was not found}
+      summary: Update Schedule
+      description: Update Schedule
+      operationId: UpdateSchedule
+  /Slot:
+    get:
+      parameters:
+      - {name: appointment-type, in: query, required: false, type: string, format: date,
+        description: The style of appointment or patient that may be booked in the
+          slot (not service type)}
+      - {name: identifier, in: query, required: false, type: string, description: A
+          Slot Identifier}
+      - {name: schedule, in: query, required: false, type: string, description: The
+          Schedule Resource that we are seeking a slot within}
+      - {name: service-category, in: query, required: false, type: string, description: A
+          broad categorization of the service that is to be performed during this
+          appointment}
+      - {name: service-type, in: query, required: false, type: string, description: The
+          type of appointments that can be booked into the slot}
+      - {name: specialty, in: query, required: false, type: string, description: The
+          specialty of a practitioner that would be required to perform the service
+          requested in this appointment}
+      - {name: start, in: query, required: false, type: string, format: date, description: Appointment
+          date/time.}
+      - {name: status, in: query, required: false, type: string, description: The
+          free/busy status of the appointment}
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              entry:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fullUrl: {type: string}
+                    resource: {$ref: '#/definitions/slot'}
+                description: entry
+      summary: Get Slots
+      description: Get a slot of time on a schedule that may be available for booking
+        appointments.
+      operationId: GetSlots
+    post:
+      parameters:
+      - {$ref: '#/parameters/slot'}
+      responses:
+        '200':
+          description: default
+          schema: {}
+      summary: Create Slot
+      description: Create a new Slot
+      operationId: CreateSlot
+  /Slot/{id}:
+    get:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/slot'}
+        '410': {description: The specified Slot ID was not found}
+      summary: Get Slot by ID
+      description: Get Slot by ID
+      operationId: GetSlotById
+    delete:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      responses:
+        '204':
+          description: Success
+          schema: {$ref: '#/definitions/slot'}
+        '410': {description: The specified Slot ID was not found}
+      summary: Delete Slot
+      description: Delete Slot
+      operationId: DeleteSlot
+    put:
+      parameters:
+      - {name: id, type: string, in: path, required: true}
+      - {$ref: '#/parameters/slot'}
+      responses:
+        '200':
+          description: Success
+          schema: {$ref: '#/definitions/slot'}
+        '410': {description: The specified slot ID was not found}
+      summary: Update Slot
+      description: Update Slot
+      operationId: UpdateSlot
+definitions:
+  actor:
+    type: object
+    properties:
+      identifier:
+        type: array
+        items: {$ref: '#/definitions/identifier'}
+      display: {type: string}
+      reference: {type: string}
+      type: {type: string, default: Patient}
+      name:
+        type: object
+        properties:
+          use:
+            type: string
+            enum: [usual, official, temp, nickname, anonymous, old, maiden]
+            default: usual
+          text: {type: string}
+          family: {type: string}
+          given:
+            type: array
+            items: {type: string}
+  appointment:
+    type: object
+    properties:
+      resourceType: {type: string, description: resourceType}
+      id: {type: string, description: id}
+      meta:
+        type: object
+        properties:
+          versionId: {type: string, description: versionId}
+          lastUpdated: {type: string, description: lastUpdated}
+      text:
+        type: object
+        properties:
+          status: {type: string, description: status}
+          div: {type: string, description: div}
+      status: {type: string, description: status}
+      serviceCategory:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      serviceType:
+        type: array
+        minItems: 0
+        items: {$ref: '#/definitions/codeableConcept'}
+      specialty:
+        type: array
+        minItems: 0
+        items: {$ref: '#/definitions/codeableConcept'}
+      appointmentType: {$ref: '#/definitions/codeableConcept'}
+      reasonReference:
+        type: array
+        items:
+          type: object
+          properties:
+            reference: {type: string, description: reference}
+            display: {type: string, description: display}
+        description: reasonReference
+      priority: {type: integer, format: int32, description: priority}
+      description: {type: string, description: description}
+      start: {type: string, description: start}
+      end: {type: string, description: end}
+      created: {type: string, description: created}
+      comment: {type: string, description: comment}
+      basedOn:
+        type: array
+        items:
+          type: object
+          properties:
+            reference: {type: string, description: reference}
+      participant:
+        type: array
+        items:
+          type: object
+          properties:
+            actor:
+              type: object
+              properties:
+                reference: {type: string, description: reference}
+                display: {type: string, description: display}
+              description: actor
+            required: {type: string, description: required}
+            status: {type: string, description: status}
+            type:
+              type: array
+              items: {$ref: '#/definitions/codeableConcept'}
+        description: participant
+    description: resource
+  codeableConcept:
+    type: object
+    properties:
+      coding:
+        type: array
+        items:
+          type: object
+          properties:
+            code: {type: string}
+            display: {type: string}
+  identifier:
+    type: object
+    properties:
+      id: {type: string}
+      use: {type: string}
+      system: {type: string}
+      value: {type: string}
+  patient:
+    type: object
+    properties:
+      resourceType: {type: string, default: Patient}
+      id: {type: string, description: External Ids for this item}
+      meta:
+        type: object
+        properties:
+          versionId: {type: string}
+          lastUpdated: {type: string}
+      text:
+        type: object
+        properties:
+          status: {type: string}
+          div: {type: string}
+      identifier:
+        type: array
+        items:
+          type: object
+          properties:
+            system: {type: string, description: system}
+            value: {type: string, description: value}
+      name:
+        type: array
+        items:
+          type: object
+          properties:
+            use: {type: string, description: use}
+            text: {type: string, description: text}
+            family: {type: string, description: family}
+            given:
+              type: array
+              items: {type: string}
+      telecom:
+        type: array
+        items:
+          type: object
+          properties:
+            system: {type: string, description: system}
+            value: {type: string, description: value}
+            use: {type: string, description: use}
+      gender: {type: string, description: gender}
+      birthDate: {type: string, description: birthDate}
+      address:
+        type: array
+        items:
+          type: object
+          properties:
+            use: {type: string, description: use}
+            line:
+              type: array
+              items: {type: string}
+              description: line
+            city: {type: string, description: city}
+            state: {type: string, description: state}
+            postalCode: {type: string, description: postalCode}
+            country: {type: string, description: country}
+  practitioner:
+    type: object
+    properties:
+      resourceType: {type: string, default: Practitioner}
+      id: {type: string}
+      meta:
+        type: object
+        properties:
+          versionId: {type: string}
+          lastUpdated: {type: string}
+      identifier:
+        type: array
+        items:
+          type: object
+          properties:
+            system: {type: string}
+            value: {type: string}
+      active: {type: boolean, default: true}
+      name:
+        type: array
+        items:
+          type: object
+          properties:
+            family: {type: string}
+            given:
+              type: array
+              items: {type: string}
+            prefix:
+              type: array
+              items: {type: string}
+      address:
+        type: array
+        items:
+          type: object
+          properties:
+            use:
+              type: string
+              enum: [home, work, temp, old, billing]
+            line:
+              type: array
+              items: {type: string}
+            city: {type: string}
+            state: {type: string}
+            postalCode: {type: string}
+      telecom:
+        type: array
+        items:
+          type: object
+          properties:
+            system: {type: string}
+            value: {type: string}
+            use:
+              type: string
+              enum: [home, work, temp, old, mobile]
+        description: telecom
+      qualification:
+        type: array
+        items:
+          type: object
+          properties:
+            identifier:
+              type: array
+              items:
+                type: object
+                properties:
+                  system: {type: string}
+                  value: {type: string}
+            code:
+              type: object
+              properties:
+                coding:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      system: {type: string}
+                      code: {type: string}
+                      display: {type: string}
+                text: {type: string}
+            period:
+              type: object
+              properties:
+                start: {type: string}
+            issuer:
+              type: object
+              properties:
+                display: {type: string}
+      gender:
+        type: string
+        enum: [male, female, other, unknown]
+  schedule:
+    type: object
+    properties:
+      resourceType: {type: string, default: Schedule}
+      id: {type: string}
+      meta:
+        type: object
+        properties:
+          versionId: {type: string}
+          lastUpdated: {type: string}
+      text:
+        type: object
+        properties:
+          status: {type: string}
+          div: {type: string}
+      identifier:
+        type: array
+        items: {$ref: '#/definitions/identifier'}
+      active: {type: boolean}
+      serviceCategory:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      serviceType:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      specialty:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      actor:
+        type: array
+        items: {$ref: '#/definitions/actor'}
+      planningHorizon:
+        type: object
+        properties:
+          start: {type: string}
+          end: {type: string}
+      comment: {type: string}
+  slot:
+    type: object
+    properties:
+      resourceType: {type: string, default: Slot}
+      id: {type: string, description: External Ids for this item}
+      meta:
+        type: object
+        properties:
+          versionId: {type: string}
+          lastUpdated: {type: string}
+        description: meta
+      serviceType:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      serviceCategory:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      specialty:
+        type: array
+        items: {$ref: '#/definitions/codeableConcept'}
+      appointmentType: {$ref: '#/definitions/codeableConcept'}
+      schedule:
+        type: object
+        properties:
+          reference: {type: string, description: reference}
+        description: schedule
+      status: {type: string}
+      start: {type: string}
+      end: {type: string}
+      comment: {type: string}
+parameters:
+  actor:
+    name: actor
+    in: body
+    schema: {$ref: '#/definitions/actor'}
+  appointment:
+    name: appointment
+    in: body
+    schema: {$ref: '#/definitions/appointment'}
+  patient:
+    name: patient
+    in: body
+    schema: {$ref: '#/definitions/patient'}
+  practitioner:
+    name: practitioner
+    in: body
+    schema: {$ref: '#/definitions/practitioner'}
+  schedule:
+    name: schedule
+    in: body
+    schema: {$ref: '#/definitions/schedule'}
+  slot:
+    name: slot
+    in: body
+    schema: {$ref: '#/definitions/slot'}
+responses: {}
+securityDefinitions:
+  oauth2_auth:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: https://login.windows.net/common/oauth2/authorize
+    tokenUrl: https://login.windows.net/common/oauth2/authorize
+    scopes: {'https://hlsfhirpower.azurehealthcareapis.com/.default': 'https://hlsfhirpower.azurehealthcareapis.com/.default'}
+security:
+- oauth2_auth: ['https://hlsfhirpower.azurehealthcareapis.com/.default']
+tags: []
