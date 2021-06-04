@@ -9,7 +9,14 @@
 
 
 ## Architecture
-### It a MVC DotNet application that integrates with FHIR APIs. The app also provides a simple front-end for uploading, viewing and cleaning up the seed data. 
+It a MVC DotNet application that integrates with FHIR APIs. The app also provides a simple front-end for uploading, viewing and cleaning up the seed data. 
+
+### FHIR objects supported
+1. Slots
+2. Schedules
+3. Patiens
+4. Practitioners
+5. Appointments
 
 ## Steps to run the tool
 1. Provision Azure FHIR API Service
