@@ -12,8 +12,13 @@
 ### It a MVC DotNet application that integrates with FHIR APIs. The app also provides a simple front-end for uploading, viewing and cleaning up the seed data. 
 
 ## Steps to run the tool
-Markup : 1. A numbered list
-              1. A nested numbered list
-              2. Which is numbered
-          2. Which is numbered
+Markup : 1. Provision Azure FHIR API Service
+         2. Download the project from the repository
+         3. Register the application with Azure AD tenant where the Azure FHIR API Service is provisioned
+         4. Add the following values to Azure KeyVault provisioned in the same subscription as Azure FHIR API Service
+         5. Add the following to Azure KeyVault
+            a. Application client ID
+            b. Application secret
+            c. Azure FHIR API URL
+        6. Deploy the DotNet project Azure App Service.
 
