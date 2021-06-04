@@ -19,6 +19,10 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 - If you already have FHIRBase and FHIRClinical connectors added in Prerequisites above, you will get a popup - your App asking your permission to use the connectors, click Allow.
 - Enter the URL of FHIR Server created in Prerequistes above. You can find the Azure API for FHIR service, in FHIR metadata endpoint with the metadata suffix. Ex: https://AzureAPIforFHIRName.azurehealthcareapis.com
 
-### Patient Portal 
-## Select Time Slot Screen
+### Patient Portal Home Screen
+When you run the Patient app you will be presented with the main page. 
+> ClearCollect(colPatients,'FHIRPower-Appointment'.GetPatients().entry.resource);
+Click on 'Schedule an Appointment'
+
+## Request Appointment Screen
 ## Appointment Info Screen
