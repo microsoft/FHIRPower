@@ -26,6 +26,6 @@ It a MVC DotNet application that integrates with FHIR APIs. The app also provide
     1. Application client ID
     2. Application secret
     3. Azure FHIR API URL
-6. Deploy the DotNet project Azure App Service.
+6. Deploy the DotNet project to Azure App Service.
 
    
