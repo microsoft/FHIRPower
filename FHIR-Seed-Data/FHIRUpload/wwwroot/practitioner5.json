@@ -1,0 +1,29 @@
+{
+  "resourceType": "Practitioner",
+  "active": true,
+  "name": [
+    {
+      "family": "Jay",
+      "given": [
+        "Ann"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "534 Palm Dr"
+      ],
+      "city": "Tampa",
+      "state": "FL",
+      "postalCode": "3999"
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,29 @@
+{
+  "resourceType": "Practitioner",
+  "active": true,
+  "name": [
+    {
+      "family": "Ram",
+      "given": [
+        "Chloe"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "7789 Benniston St"
+      ],
+      "city": "Clayton",
+      "state": "PA",
+      "postalCode": "3999"
+    }
+  ]
+}
+
+
+

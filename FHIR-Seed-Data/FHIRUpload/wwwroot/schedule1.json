@@ -1,0 +1,46 @@
+{
+  "resourceType": "Schedule",
+  "active": true,
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "code": "17",
+          "display": "General Practice"
+        }
+      ]
+    }
+  ],
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "code": "75",
+          "display": "Genetic Counselling"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "394580004",
+          "display": "Clinical genetics"
+        }
+      ]
+    }
+  ],
+  "actor": [
+    {
+      "reference": "Practitioner/1e9fd78f-dfd2-4b5b-8306-287586f050ef",
+      "display": "Dr Adam Hopkins"
+    }
+  ],
+  "planningHorizon": {
+    "start": "2021-06-10T09:00:00Z",
+    "end": "2021-06-10T11:00:00Z"
+  },
+  "comment": "The slots attached to this schedule are for genetic counselling in the USS Enterprise-D Sickbay."
+}
+

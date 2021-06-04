@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p><a href="https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/">Azure FHIR API Service </a> - generate and cleanup sample FHIR data..</p>
+</div>
+
+<div class="text-left">
+    <h4 class="display-6">Generate</h4>
+    <button id="Upload" onclick="callServer('/api/fhir/upload',UploadData)">Sample data....</button>
+</div>
+<div id="UploadTable">
+</div>
+<div class="text-left">
+    <h4 class="display-6">Cleanup</h4>
+    <button id="Cleanup" onclick="callServer('/api/fhir/cleanup',CleanupData)">Sample data....</button>
+</div>
+<div id="CleanupTable">
+</div>
+<hr />
+<div class="text-left">
+    <h4 class="display-6">View</h4>
+    <button id="Patient" onclick="callServer('/api/fhir/patients',UpdateData)">Patients</button> <button id="Practitioner" onclick="callServer('/api/fhir/practitioners',UpdateData)">Practitioners</button> <button id="Appt" onclick="callServer('/api/fhir/appointments',UpdateData)">Appointments</button>
+    <button id="Schedule" onclick="callServer('/api/fhir/schedules',UpdateData)">Schedules</button> <button id="Slot" onclick="callServer('/api/fhir/slots',UpdateData)">Slots</button>
+</div>
+
+<div id="DataTable">
+</div>
+
+
+<script>
+    function callServer(url, callBack) {
+
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200)
+                callBack((this.responseText));
+        }
+        xmlHttp.open("GET", url, true);
+
+        xmlHttp.send();
+    }
+
+    function UpdateData(data) {
+       
+        document.getElementById("DataTable").innerHTML = data;
+        document.getElementById("UploadTable").innerHTML = "";
+        document.getElementById("CleanupTable").innerHTML = "";
+    }
+
+    function UploadData(data) {
+
+        document.getElementById("UploadTable").innerHTML = data;
+        document.getElementById("CleanupTable").innerHTML = "";
+        document.getElementById("DataTable").innerHTML = "";
+    }
+
+    function CleanupData(data) {
+
+        document.getElementById("CleanupTable").innerHTML = data;
+        document.getElementById("UploadTable").innerHTML = "";
+        document.getElementById("DataTable").innerHTML = "";
+    }
+</script>

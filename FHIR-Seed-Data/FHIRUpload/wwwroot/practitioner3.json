@@ -1,0 +1,29 @@
+{
+  "resourceType": "Practitioner",
+  "active": true,
+  "name": [
+    {
+      "family": "Henry",
+      "given": [
+        "Ray"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "534 King St"
+      ],
+      "city": "Dallas",
+      "state": "TX",
+      "postalCode": "3999"
+    }
+  ]
+}
+
+
+

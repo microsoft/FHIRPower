@@ -1,0 +1,40 @@
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "family": "Smith",
+      "given": [
+        "Amy"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "(03) 1111 6473",
+      "use": "home",
+      "rank": 1
+    },
+    {
+      "system": "phone",
+      "value": "(03) 5678 5613",
+      "use": "mobile",
+      "rank": 2
+    },
+    {
+      "system": "phone",
+      "value": "(03) 4444 8834",
+      "use": "old",
+      "period": {
+        "end": "2014"
+      }
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1977-11-20"
+}
+

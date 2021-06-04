@@ -1,0 +1,85 @@
+{
+  "resourceType": "Appointment",
+  "status": "pending",
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "system": "http://example.org/service-category",
+          "code": "31",
+          "display": "Specialist Surgical"
+        }
+      ]
+    }
+  ],
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "code": "220",
+          "display": "Plastic & Reconstructive Surgery"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394611003",
+          "display": "Surgery-Plastic surgery"
+        }
+      ]
+    }
+  ],
+  "appointmentType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0276",
+        "code": "FOLLOWUP",
+        "display": "A follow up visit from a previous appointment"
+      }
+    ]
+  },
+  "priority": 5,
+  "description": "Discussion on the results of your recent MRI",
+  "start": "2021-07-02T07:00:00Z",
+  "end": "2021-07-02T09:00:00Z",
+  "created": "2021-05-29",
+  "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/myringotomy"
+    }
+  ],
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/97f154a9-b5bc-4990-9883-4dcca8e6f233",
+        "display": "Priya Mani"
+      },
+      "required": "required",
+      "status": "accepted"
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "ATND"
+            }
+          ]
+        }
+      ],
+      "actor": {
+        "reference": "Practitioner/3acd27e9-bf3f-4dcf-aad9-41785221dfa0",
+        "display": "Chloe Ram"
+      },
+      "required": "required",
+      "status": "needs-action"
+    }
+  ]
+}
+

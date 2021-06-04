@@ -1,0 +1,29 @@
+{
+  "resourceType": "Practitioner",
+  "active": true,
+  "name": [
+    {
+      "family": "Caleb",
+      "given": [
+        "Kay"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "534 Palm St"
+      ],
+      "city": "Dallas",
+      "state": "MO",
+      "postalCode": "3999"
+    }
+  ]
+}
+
+
+

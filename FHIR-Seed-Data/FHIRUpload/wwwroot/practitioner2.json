@@ -1,0 +1,28 @@
+{
+  "resourceType": "Practitioner",
+  "active": true,
+  "name": [
+    {
+      "family": "Thomas",
+      "given": [
+        "Ava"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "534 Queen St"
+      ],
+      "city": "Chesterfield",
+      "state": "MO",
+      "postalCode": "3999"
+    }
+  ]
+}
+
+
