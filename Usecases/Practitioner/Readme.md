@@ -32,14 +32,14 @@ Home page shows the upcoming notifications for the practitioner.
 
 <center><img src="images/Home.png" width="700"></center>
 
-## Patients Screen
+### Patients Screen
 The gallery shows patient list and clickable icons to view their observations, encounters, appointments and medications.
 
 <center><img src="images/Patients.png" width="700"></center>
 
 <center><img src="images/Observations.png" width="700"></center>
 
-## Other Screens
+### Other Screens
 
 <center><img src="images/Appointments.png" width="700"></center>
 
