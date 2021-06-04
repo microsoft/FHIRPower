@@ -9,5 +9,11 @@
 
 
 ## Architecture
-It a MVC DotNet application that integrates with FHIR APIs. The app also provides a simple front-end for initiating and uploading, viewing and cleanup of seed data. 
+### It a MVC DotNet application that integrates with FHIR APIs. The app also provides a simple front-end for uploading, viewing and cleaning up the seed data. 
+
+## Steps to run the tool
+Markup : 1. A numbered list
+              1. A nested numbered list
+              2. Which is numbered
+          2. Which is numbered
 
