@@ -21,10 +21,10 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 
 ### Patient Portal Home Screen
 When you run the Patient app you will be presented with the main page. 
-<center><img src="images/Patient_Portal_Home_screen.PNG" width="700"></center>
+<center><img src="images/Patient_Portal_Home_screen.png" width="700"></center>
 
 ### Request Appointment Screen
-<center><img src="images/Patient_Portal_ReqAppt_screen.PNG" width="700"></center>
+<center><img src="images/Patient_Portal_ReqAppt_screen.png" width="700"></center>
 
 ### Appointment Info Screen
-<center><img src="images/Patient_Portal_Appt_Info_screen.PNG" width="700"></center>
+<center><img src="images/Patient_Portal_Appt_Info_screen.png" width="700"></center>
