@@ -14,7 +14,7 @@ It a MVC DotNet application that integrates with FHIR APIs. The app also provide
 ### FHIR objects supported
 1. Slots
 2. Schedules
-3. Patiens
+3. Patients
 4. Practitioners
 5. Appointments
 
