@@ -12,7 +12,7 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 - Click Update in IMPORT SETUP and select Create as new, enter Resource name and click Save.
 - Click Import.
 
-- ### Edit or Run imported Apps
+### Edit or Run imported Apps
 - You will get a message All package resources were successfully imported.
 - Click Apps on the left ribbon to see the App you imported. NOTE there might be a few minutes delay.
 - Select the imported App, and choose Edit to look at the code, make changes, or Play to run the App.
@@ -21,9 +21,10 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 
 ### Patient Portal Home Screen
 When you run the Patient app you will be presented with the main page. 
-> ClearCollect(colPatients,'FHIRPower-Appointment'.GetPatients().entry.resource);
-Click on 'Schedule an Appointment'
-![Home](../Patient/images/Patient_Portal_Home_screen.png)
+<center><img src="images/Patient_Portal_Home_screen.PNG" width="700"></center>
 
-## Request Appointment Screen
-## Appointment Info Screen
+### Request Appointment Screen
+<center><img src="images/Patient_Portal_ReqAppt_screen.PNG" width="700"></center>
+
+### Appointment Info Screen
+<center><img src="images/Patient_Portal_Appt_Info_screen.PNG" width="700"></center>
