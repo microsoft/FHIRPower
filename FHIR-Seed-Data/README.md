@@ -25,7 +25,8 @@ It a MVC DotNet application that integrates with FHIR APIs. The app also provide
 4. Add the following values to Azure KeyVault provisioned in the same subscription as Azure FHIR API Service
     1. Application client ID
     2. Application secret
-    3. Azure FHIR API URL
+    3. Application Tenant (Azure AD) ID
+    4. Azure FHIR API URL
 6. Deploy the DotNet project to Azure App Service.
 
    
