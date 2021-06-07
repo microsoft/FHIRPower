@@ -20,18 +20,25 @@ Steps to import the sample PowerApps package into your PowerApps environment.
 - Enter the URL of FHIR Server created in Prerequistes above. You can find the Azure API for FHIR service, in FHIR metadata endpoint with the metadata suffix. Ex: https://AzureAPIforFHIRName.azurehealthcareapis.com
 
 ### Patient Portal Home Screen
-When you run the Patient app you will be presented with the main page. When this page loads ('_onVisible_') it will call _**ClearCollect()**_ function that clears and FHIRConnectorName._**GETAppointment**_ that loads Patient name and Patient ID from FHIR Server into collections.
+When you run the Patient app you will be presented with the main page. Main page will display the Patient Name and Schedule an Appointment button. When this page loads ('_onVisible_') it will call _**ClearCollect()**_ function that clears and FHIRConnectorName._**GETPatients**_ that loads Patient name and Patient ID from FHIR Server into colPatients collection.
 
 > ClearCollect(colPatients,'FHIRPower-Appointment'.GetPatients().entry.resource);
 
-Click the '**Schedule an Appointment**' button, The button action ('_onSelect_') will navigate the app to screen called _scrRequestAppt_
+Click the '**Schedule an Appointment**' button, the button action ('_onSelect_') will navigate the app to screen called _scrRequestAppt_
 
 > Navigate(scrRequestAppt)
 
 <center><img src="images/Patient_Portal_Home_screen.png" width="700"></center>
 
 ### Request Appointment Screen
+
 <center><img src="images/Patient_Portal_ReqAppt_screen.png" width="700"></center>
 
 ### Appointment Info Screen
+
+The gallery shows data from collection colAppointments.
+Appointment Info page will call  _**ClearCollect()**_ function that clears and FHIRConnectorName._**GETAppointments**_ that loads Practitioner name, ServiceType, AppointmentType, Status, Date and Time from FHIR Server into colAppointments collection.
+
+> ClearCollect(colAppointments, 'FHIRPower-Appointment'.GetAppointments({patient:lblHomePatientId.Text}).entry.resource);
+
 <center><img src="images/Patient_Portal_Appt_Info_screen.png" width="700"></center>
