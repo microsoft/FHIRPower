@@ -1,5 +1,5 @@
 # Building a Schedule Power App
-As usual, I started with a Canvas app in the desktop format. If you know you’ll want a phone format in the end, then you should start with that, but I prefer the extra real estate when I’m learning about a new API (and since I’m almost always in reach of a tablet, laptop, or desktop, I still rarely use apps on my phone).
+As usual, I started with a Canvas app in the desktop format. If you know you’ll want a phone format in the end, then you should start with that, but I prefer the extra real estate when I’m learning about a new API (and since I’m almost always in reach of a tablet/laptop/desktop, I still rarely use apps on my phone).
 
 Since this app is really just going to be used to verify my custom connector is working as expected, I’m going to add a connection to my custom connector first. The database cylinder icon on the left hand side of the Power App editor canvas is where you do that. (The Search text box here is misleading. It doesn’t search available connectors, but just the connectors and collections you’ve already added to the app.)
 
@@ -32,15 +32,14 @@ If I “play” the app, and hit the Refresh “button”, I should see the quer
 Getting all of the Schedules in my FHIR repository is a good first step, but an unfiltered list would include really old Schedules and Schedules for participants that I may not care about. Instead, we need to utilize filters. The filters I’m adding here may not be the best user experience, but they do prove that my filtered queries work and I can work on improving the user experience next iteration.
 
 For Schedule entities, there are all kinds of options, but I added filters for the following:
-|Header1 |Header2  | Header3|
+| Use Case | Button's OnSelect formula | Example search value|
 --- | --- | ---
-|data1|data2|data3|
-|Filter on Participants|
-|Filter on Schedule ID|
-|Filter on Date|
-|Filter on DateTime|
-|Filter on Service Category|
-|Filter on Service Type|
+|Filter on Participants| | 
+|Filter on Schedule ID| | 
+|Filter on Date| | 
+|Filter on DateTime| |
+|Filter on Service Category| | 
+|Filter on Service Type| |
 
 I then went back and added Reset functions (after my ClearCollect function) to my Refresh button’s OnSelect property and my scnList’s OnVisible property.
 
