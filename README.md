@@ -51,7 +51,7 @@ https://docs.microsoft.com/en-us/connectors/fhirclinical/) need to be added to y
 This repository provides starter kit PowerApp pacakges with the ability to extend the App.
 
 - **[Appointments](./Usecases/Appointments)**
-- **[Practitioner Portal](./Usecases/Practioner)**
+- **[Practitioner Portal](./Usecases/Practitioner)**
 
 ## Contributing
 
