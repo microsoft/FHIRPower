@@ -1,5 +1,7 @@
 # PowerApps with Azure API for FHIR
 
+[View other projects by our team](https://github.com/microsoft/emerging-opportunities/)
+
 #### This repository hosts the guidance and reference architecture for using PowerApps with Azure API for FHIR. These are only samples to get started and doesn't include all FHIR resources or functionality.
 
 ## Scenario
