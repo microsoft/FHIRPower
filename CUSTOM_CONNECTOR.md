@@ -27,7 +27,9 @@ Step 2 - Create App Registration for Custom Connector to access App Registration
 		b. Select "Accounts in any organization directory" if you plan to access FHIR API from outside this Tenant.
 		c. Create:
 			i. Capture the Client ID of the newly created App Registration
-	2. Configure App Registration
+	2. Set Auth Redirect URI: 
+		https://global.consent.azure-apim.net/redirect
+	3. Configure App Registration
 		a. Certificate & Secret
 			i. New client secret
 				1) Description: [your choice]
