@@ -16,8 +16,9 @@ Step 1 - Create App Registration to access the FHIR Server API
 			i. Add a permission
 				1) APIs in my Org 
 				2) Find and Select [FHIR server API]
-				3) Check permission
-				4) Add permission
+				3) Choose Delegated
+				4) Check permission
+				5) Add permission
 	
  	
 Step 2 - Create App Registration for Custom Connector to access App Registration for FHIR Server API
