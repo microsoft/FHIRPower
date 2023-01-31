@@ -65,6 +65,9 @@ When you submit a pull request, a CLA bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+## Community Discord
+If you are interested in projects like this or connecting with the health and life sciences developer community, please join our Discord server at https://aka.ms/HLS-Discord. We're a technology agnostic community seeking to share and collaborate on all things related to developing healthcare solutions. For in-depth questions specific to this project, please use the "Discussions" tab on GitHub. We welcome your thoughts and feedback.
+
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
